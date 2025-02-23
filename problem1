@@ -1,0 +1,1 @@
+cat ./transaction-log.txt | jq -r 'select(.symbol == "TSLA") | .order_id' | while read order_id; do curl "https://example.com/api/$order_id" > ./output.txt; done
