@@ -1,0 +1,18 @@
+Checking system performance.
+	- Using top/htop/free -m/ps aux --sort=-%mem to check
+	- Defecting/checking applications are having high CPU/RAM.
+	- swapon -s
+Checking NGINX
+	- checking NGINX config: sudo vi /etc/nginx/nginx.conf (default location)
+	- checking NGNIX logs:  sudo tail -f /var/log/nginx/error.log
+				sudo tail -f /var/log/nginx/access.log
+	- checking connections: netstat -tulnp
+				ss -tulnp
+Troubleshooting
+	If NGINX has connection overload/high-performance
+		- Checking/Modify worker_processes and worker_connections in NGINX
+		- Increasing NGINX server/ use load balancer 
+	If other applications have high performance:
+		- Checking/modify/kill application configuration - combine with Dev Team (if need)
+			syntax to kill: sudo kill <PID>
+		- Having plan to upgrade hardware (RAM,CPU,...) (if need)
